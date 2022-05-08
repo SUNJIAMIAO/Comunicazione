@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 视频居中 */
+        video{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            overflow: 0 auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        section>div {
+            background-color: #CCCCCC;
+            width: 100%;
+            height: 100vh;
+            background-size: 100% !important;
+            background-repeat: no-repeat !important;
+        }
+
+        .ban {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(129, 129, 129, 0.5);
+        }
+
+        .first {
+            position: relative;
+        }
+
+        .menu-btn {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            cursor: pointer;
+        }
+
+        .menu {
+            width: 0px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: absolute;
+            right: 180px;
+            top: 50px;
+            box-sizing: border-box;
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .menu>li {
+            width: 100%;
+            line-height: 80px;
+            border: 1px solid rgba(70, 70, 70, 0.5);
+            transition: 0.2s;
+        }
+
+        .menu>li:hover {
+            background-color: #dbdbdb;
+        }
+
+        .menu li {
+            font-size: 22px;
+            color: black;
+            font-weight: bold;
+            padding-left: 30px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .video{
+            position: relative;
+        }
+
+        .video video{
+            display: none;
+        }
+
+        .video .close{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="1">
+        <div class="first" style="background: url('../newimg/1.png') ;">
+            <div id="ban">
+                <div class="menu-btn"><img width="100%" src="../newimg/menu.png" alt=""></div>
+                <nav class="menu">
+                    <li>Introduzione</li>
+                    <li>Comunicare e Valorizzare</li>
+                    <li>Cosa imparerai</li>
+                    <li>Profilo professionale e sbocchi lavorativi</li>
+                    <li>I progetti realizzati</li>
+                    <li>Perché consigliere questo corso?</li>
+                    <li>Programma Erasmus +</li>
+                </nav>
+            </div>
+        </div>
+    </section>
+        
+    </div>
+    <section><div style="background: url('../newimg/3.png') ;"></div></section>
+    <section><div style="background: url('../newimg/4.png') ;"></div></section>
+    <section><div style="background: url('../newimg/5.png') ;"></div></section>
+    <section><div style="background: url('../newimg/6.png') ;"></div></section>
+    <section><div class="video" style="background: url('../newimg/7.png') ;"></div></section>
+    <section><div style="background: url('../newimg/8.png') ;"></div></section>
+    <section><div style="background: url('../newimg/9.png') ;"></div></section>
+    <a  href="https://www.accademiabellearti.fr.it/"><section><div style="background: url('../newimg/10.png');height: 190px;"></div></section></a>
+</body>
+<script>
+    let menuBtn = $(".menu-btn");
+    let menu = $(".menu");
+    let ban = $("#ban");
+    menuBtn.onclick = function () {
+        if (menu.check) {
+            menu.check=false;
+            menu.style.width = "0px";
+            menuBtn.children[0].src="../newimg/menu.png";
+            ban.classList.remove("ban");
+        } else {
+            menu.check = true;
+            menu.style.width = "500px";
+            menuBtn.children[0].src="../newimg/close.png";
+            ban.classList.add("ban");
+        }
+    }
+    
+    
+    for (let i = 0; i < menu.children.length; i++) {
+        menu.children[i].num=i;
+        menu.children[i].onclick=goTo;
+        
+    }
+
+    function $(id) {
+        return document.querySelector(id);
+    }
+
+    let videoBtn = $(".video");
+    
+    videoBtn.onclick=function(){
+        videoBtn.innerHTML="<video style='width: 1500px;height: 930px;align:center;' src='../vedio/Allestimento Malkovich.mov' controls></video><div id='videoCloseBtn'><img width='100%' src='../newimg/close.png'></div>";
+        this.children[0].style.display="block";
+        this.children[0].play();
+        let videoCloseBtn = $("#videoCloseBtn");
+        videoCloseBtn.className="close";
+        videoCloseBtn.onclick=function(e){
+            videoBtn.innerHTML="";
+            event.stopPropagation(); 
+        }
+    };
+
+    let sections=document.querySelectorAll("section");
+
+    function goTo(){
+        let sectionTop = sections[this.num].offsetTop+sections[this.num].offsetHeight;
+        // let speed = parseInt(sectionTop / 200);
+        // let thisTop = 0;
+        
+        // let time = setInterval(()=>{
+        //     if(thisTop>sectionTop-speed){
+                    window.scrollTo(0,sectionTop)
+        //         clearInterval(time);
+        //     }else{
+        //         window.scrollTo(0,thisTop+=speed)
+        //     }
+        // },2)
+    }
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "HelveticaBold";
+    src: url(./ttf/Helvetica/OTF/HelveticaNeue-CondensedBold.otf);
+}
+@font-face {
+    font-family: "Helvetica";
+    src: url(./ttf/Helvetica/OTF/HelveticaNeue-CondensedBlack.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+body>div{
+    display: flex;
+    width: 100%;
+}
+
+img{
+    vertical-align: bottom;
+}
+
+.title{
+    width: 100%;
+    font-family:"HelveticaBold";
+    color: white;
+    font-size: 3vw;
+    margin-bottom: 14%;
+    letter-spacing:0.2vw;
+}
+
+.content{
+    color: #f7f7f7;
+    font-size: 1.4vw;
+}
+
+.two{
+    background-color: #5B5D6E;
+}
+
+.three{
+    background-color: #9ABBA8;
+}
+
+.four{
+    background-color: #5E6F89;
+}
+
+.five{
+    background-color: #5D6E65;
+    display: block;
+}
+
+.six{
+    background-color: #69516D;
+    position: relative;
+}
+
+.seven{
+    background-color: #785368;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.eight{
+    background-color: #526E77;
+}
+
+.one img,.nine img{
+    width: 100%;
+}
+
+.two img,.three img,
+.four img,.six img,
+.eight img{
+    width: 50%;
+}
+
+.five img{
+    width: 28%;
+}
+
+.seven img{
+    width: 90%;
+}
+
+.five>div:first-child{
+    display: flex;
+    justify-content: space-around;
+}
+
+.text{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.one{
+    position: relative;
+}
+
+.one .logo{
+    width: 16%;
+    position: absolute;
+    left: 4%;
+    top: 4%;
+}
+
+.one .menu-btn{
+    width: 6%;
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    cursor: pointer;
+}
+
+.one .title{
+    width: 70%;
+    position: absolute;
+    font-size: 4vw;
+    left: 4%;
+    top: 24%;
+}
+
+.text,.Horizontal-text{
+    padding:6%;
+    box-sizing: border-box;
+}
+
+.Horizontal-text .title{
+    margin-bottom: 2%;
+}
+
+.Horizontal-text .content{
+    font-size: 1.5vw;
+}
+
+.seven .Horizontal-text{
+    width: 100%;
+}
+
+.seven .content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.seven .content div{
+    width: 30%;
+}
+.one .menu{
+    width: 0%;
+    background-color: #fff;
+    position: absolute;
+    right: 12%;
+    top: 6%;
+    box-sizing: border-box;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.menu>li {
+    width: 100%;
+    line-height: 7vh;
+    border: 1px solid rgba(70, 70, 70, 0.5);
+    transition: 0.2s;
+}
+
+.menu>li:hover {
+    background-color: #dbdbdb;
+}
+
+.menu li {
+    font-size: 1.5vw;
+    color: black;
+    font-weight: bold;
+    padding-left: 1.5vw;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#video{
+    width: 83%;
+    height: 73%;
+    /* margin: 5% auto; */
+    position: absolute;
+    display: none;
+    transform:translate(10%,5%)
+}
+
+.six .colse-video{
+    position: absolute;
+    width: 6%;
+    right: 4%;
+    top: 4%;
+    display: none;
+    cursor: pointer;
+}
+
+.nine{
+    position: relative;
+}
+
+.nine .bottom-logo{
+    width: 10%;
+    position: absolute;
+    right: 4%;
+    top: 4%;
+}
+
+.guanwang{
+    width: 16%;
+    min-width:250px;
+    position: absolute;
+    background-color: #bb0271;
+    line-height: 2vh;
+    border-radius: 2vh;
+    text-align: center;
+    right: 16%;
+    top: 26%;
+}
+
+.nine a{
+    color: #fff;
+    text-decoration: none;
+    font-size:0.8vw;
+
+}
